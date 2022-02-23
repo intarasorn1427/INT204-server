@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns=http://www.w3.org/1999/xhtml
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container p4 m4"><h2>Student List:</h2>
+    <hr>
+    <div class="row">
+        <div class="col-2">Student Id</div>
+        <div class="col-4">Name</div>
+        <div class="col-2">GPAX</div>
+    </div>
+    <div class="row" th:each="student : ${students}">
+        <div class="col-2" th:text="${student.id}"/>
+        <div class="col-4" th:text="${student.name}"/>
+        <div class="col-2" th:text="${student.gpax}"/>
+    </div>
+</div>
