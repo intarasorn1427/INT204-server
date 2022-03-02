@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -40,4 +42,11 @@ public class Employee {
 
     @Column(name = "jobTitle", nullable = false, length = 50)
     private String jobTitle;
+
+    //Add 03/02
+    @JsonIgnore
+    @OneToMany(mappedBy = "salesRepEmployee")
+    private Set<Customer> customers = new LinkedHashSet<>();
+
+
 }
